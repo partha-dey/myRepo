@@ -1,0 +1,13 @@
+---
+- hosts: node2
+  become: true
+  tasks:
+  - name: Install Docker
+    yum:
+     name: docker
+     state: latest
+
+  - name: doc Ser
+    service:
+     name: docker
+     state: restarted

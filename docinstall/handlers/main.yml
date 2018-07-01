@@ -1,0 +1,6 @@
+---
+# handlers file for docinstall
+- name: Restart Docker Service
+  service:
+    name: docker
+    state: restarted

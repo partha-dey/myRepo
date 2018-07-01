@@ -1,0 +1,5 @@
+---
+- hosts: node2
+  become: true
+  tasks:
+  - import_tasks: main3_1.yml

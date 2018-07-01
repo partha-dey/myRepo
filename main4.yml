@@ -1,0 +1,16 @@
+---
+- name: Install Docker and restart
+  hosts: node2
+  become: true
+  vars:
+   pkg_name: "docker"
+  tasks:
+  - name: Install Docker
+    yum:
+     name: "{{pkg_name}}"
+     state: latest
+
+  - name: Restart Docker Service
+    service:
+     name: "{{pkg_name}}"
+     state: restarted
